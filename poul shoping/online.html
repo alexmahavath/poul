@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Footwear Store – WhatsApp Shop</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --black: #0b0b0b;
+      --dark-gray: #1a1a1a;
+      --white: #ffffff;
+      --orange: #ff6a00;
+      --blue: #00e5ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* NAVBAR */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(0,0,0,0.7);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      color: var(--orange);
+      font-size: 24px;
+    }
+
+    nav a {
+      color: var(--white);
+      margin-left: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    /* HERO */
+    .hero {
+      height: 90vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+        url('https://images.unsplash.com/photo-1528701800489-20be2c7e6b5c') center/cover;
+      display: flex;
+      align-items: center;
+      padding: 0 60px;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      padding: 14px 30px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+      margin-right: 15px;
+    }
+
+    .btn-orange {
+      background: var(--orange);
+      color: #000;
+    }
+
+    .btn-blue {
+      background: transparent;
+      border: 1px solid var(--blue);
+      color: var(--blue);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255,255,255,0.2);
+    }
+
+    /* PRODUCTS */
+    .section {
+      padding: 80px 60px;
+    }
+
+    .section h3 {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .product {
+      background: var(--dark-gray);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .product:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-info h4 {
+      margin-bottom: 10px;
+    }
+
+    .price {
+      color: var(--orange);
+      margin-bottom: 15px;
+    }
+
+    .whatsapp-btn {
+      background: #25D366;
+      border: none;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 30px;
+      opacity: 0.7;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 34px; }
+      header { padding: 15px 20px; }
+      .section { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SNEAKR</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#products">Shop</a>
+    <a href="#">Wishlist</a>
+   
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h2>Step Into Premium Footwear</h2>
+    <p>Luxury sneakers crafted for performance, comfort, and style.</p>
+    <button class="btn btn-orange">Shop Now</button>
+    <button class="btn btn-blue">Buy via WhatsApp</button>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <h3>Trending Sneakers</h3>
+
+  <div class="products">
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff" />
+      <div class="product-info">
+        <h4>Nike Air Max</h4>
+        <p class="price">₹7,999</p>
+        <button class="whatsapp-btn" onclick="orderWhatsApp('Nike Air Max', 7999)">Order on WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5" />
+      <div class="product-info">
+        <h4>Adidas Ultraboost</h4>
+        <p class="price">₹9,499</p>
+        <button class="whatsapp-btn" onclick="orderWhatsApp('Adidas Ultraboost', 9499)">Order on WhatsApp</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="RS-X-Games-Sneakers.avif" />
+      <div class="product-info">
+        <h4>Puma RS-X</h4>
+        <p class="price">₹6,299</p>
+        <button class="whatsapp-btn" onclick="orderWhatsApp('Puma RS-X', 6299)">Order on WhatsApp</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 SNEAKR. Order via WhatsApp • Premium Footwear</p>
+</footer>
+
+<script>
+  function orderWhatsApp(name, price) {
+    const phone = "7907964023"; // change to your WhatsApp number
+    const message = `Hello 👋%0A
+I want to order:%0A
+
+👟 Product: ${name}%0A💰 Price: ₹${price}%0A📏 Size: UK 9%0A🔢 Quantity: 1`;
+
+    window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+  }
+</script>
+
+</body>
+</html>
